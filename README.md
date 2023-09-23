@@ -15,3 +15,7 @@
 ## Target Audience
 
 ## Tech Stack
+
+- Wireframes and Site Map: Figma
+- Website: HTML & CSS/SCSS
+- Deployment: Vercel
