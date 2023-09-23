@@ -1,6 +1,17 @@
-/* My first SCSS File */
+/* --- Variable Declaration --- */
+/* Color Palette */
+/* Font Selection */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
 p {
-  font-size: 16px;
+  font-family: "Roboto", sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */
