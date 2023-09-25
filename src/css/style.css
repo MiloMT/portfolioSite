@@ -1,17 +1,224 @@
 /* --- Variable Declaration --- */
 /* Color Palette */
 /* Font Selection */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* --- Wildcard Selector --- */
+* {
+  margin: 0em;
+  padding: 0em;
+  color: #F2F2F2;
+}
+
+/* --- Mixins --- */
+/* --- Element Selectors --- */
+/* Layout Elements */
+body {
+  background-color: #262626;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  flex-wrap: wrap;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  flex-wrap: wrap;
+}
+
+/* Text Elements */
+h1 {
   font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 3em;
+  line-height: 1.3;
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  color: #1AD993;
+  font-size: 1.25em;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  font-weight: bold;
+  font-size: 1.25em;
 }
 
 p {
   font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+a {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  text-decoration: none;
+}
+a a:link {
+  text-decoration: none;
+}
+a a:visited {
+  text-decoration: none;
+}
+
+/* Container Elements */
+button {
+  min-height: 3em;
+  color: #1AD993;
+  border-color: #1AD993;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 10px;
+  padding: 0.5em;
+  background-color: transparent;
+}
+
+/* --- Class Selectors --- */
+/* Type Containers */
+.dark {
+  background-color: #0D0D0D;
+}
+
+.card {
+  background-color: #8C8C8C;
+}
+
+.titleLogo {
+  background-color: #F2F2F2;
+  border-radius: 50%;
+  min-width: 15em;
+  min-height: 15em;
+  color: #0D0D0D;
+}
+
+.navLogo {
+  background-color: #F2F2F2;
+  border-radius: 50%;
+  min-width: 2em;
+  min-height: 2em;
+  color: #0D0D0D;
+}
+
+.serviceLogo {
+  height: 2em;
+  width: 2em;
+}
+
+/* Section Containers */
+.intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 3vw;
+  flex-wrap: wrap;
+  min-height: 10em;
+}
+.intro > * {
+  margin: 1em;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3vw;
+  flex-wrap: wrap;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3vw;
+  flex-wrap: wrap;
+}
+
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 3vw;
+  flex-wrap: wrap;
+}
+.blog .headerSection {
+  text-align: right;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3vw;
+  flex-wrap: wrap;
+}
+.contact * {
+  text-align: center;
+}
+
+/* Sub-Section Containers */
+.headerSection {
+  max-width: 40vw;
+}
+.headerSection * {
+  margin: 10px 0px;
+}
+
+.navLinks a {
+  margin: 0em 0.3em;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.cardList article {
+  margin: 1em 1em 1em 0em;
+  border-radius: 15px;
+}
+.cardList .service {
+  width: 15em;
+  height: 10em;
+  padding: 3em 1em 1em 1em;
+}
+.cardList .contactCard {
+  display: inline-flex;
+  align-items: center;
+  height: 3em;
+  padding: 1em 1em 1em 1em;
+}
+.cardList .contactCard * {
+  color: #1AD993;
+  font-weight: bold;
+  margin: 0em 1em;
+}
+
+/* --- ID Selectors --- */
+#accent {
+  color: #1AD993;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,26 +5,141 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Portfolio Site</title>
+        <title>MiloDev</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Header 1 ABCDEFGHIJKLMNOPQRSTUVWXYZ</h1>
-        <h2>Header 1</h2>
-        <h3>Header 1</h3>
-        <h4>Header 1</h4>
-        <h5>Header 1</h5>
-        <h6>Header 1</h6>
+        <!-- Main Navigation Bar -->
+        <nav>
+            <figure class="navLogo"></figure>
+            <section class="navLinks">
+                <a href="">Home</a>
+                <a href="">Portfolio</a>
+                <a href="">About</a>
+                <a href="">Journal</a>
+                <a href="" id="accent">Contact</a>
+            </section>
+        </nav>
 
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, odit.</p>
+        <!-- Main Page Body -->
+        <main>
+            <!-- Intro Block -->
+            <section class="dark intro">
+                <figure class="titleLogo">
 
-        <div style="background-color: #8C8C8C; width: 100px; height: 100px;">Primary</div>
-        <div style="background-color: #262626; width: 100px; height: 100px;">Secondary</div>
-        <div style="background-color: #1AD993; width: 100px; height: 100px;">Accent</div>
-        <div style="background-color: #0D0D0D; width: 100px; height: 100px;">Dark</div>
-        <div style="background-color: #F2F2F2; width: 100px; height: 100px;">Light</div>
+                </figure>
+                <header class="headerSection">
+                    <h2>Who Am I</h2>
+                    <h1>Full Stack Web Developer</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, at nisi. Reprehenderit amet itaque, dolores adipisci quas fuga asperiores ad.
+                    </p>
+                    <button>Contact Me</button>
+                </header>
+            </section>
+            <!-- Services Block -->
+            <section class="services">
+                <header>
+                    <h2>Services</h2>
+                    <h1>What I Do</h1>
+                </header>
+                <!-- Cards That Describe Offered Services -->
+                <section class="cardList">
+                    <article class="card service">
+                        <img src="img/device_white.png" alt="Front-end" class="serviceLogo"></img>
+                        <h3>Front-End Design</h3>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis eligendi blanditiis hic. Vero, voluptas necessitatibus enim nemo placeat nisi sunt!
+                        </p>
+                    </article>
+                    <article class="card service">
+                        <img src="img/server_white.png" alt="Back-end" class="serviceLogo"></img>
+                        <h3>Back-End Development</h3>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis eligendi blanditiis hic. Vero, voluptas necessitatibus enim nemo placeat nisi sunt!
+                        </p>
+                    </article>
+                    <article class="card service">
+                        <img src="img/github-mark-white.png" alt="Github" class="serviceLogo"></img>
+                        <h3>Git Version Control</h3>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis eligendi blanditiis hic. Vero, voluptas necessitatibus enim nemo placeat nisi sunt!
+                        </p>
+                    </article>
+                    <article class="card service">
+                        <img src="img/code_white.png" alt="Code" class="serviceLogo"></img>
+                        <h3>Programming</h3>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis eligendi blanditiis hic. Vero, voluptas necessitatibus enim nemo placeat nisi sunt!
+                        </p>
+                    </article>
+                </section>
+            </section>
+            <!-- Portfolio Preview Block -->
+            <section class="dark portfolio">
+                <header class="headerSection">
+                    <h2>Portfolio</h2>
+                    <h1>My Work</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, at nisi. Reprehenderit amet itaque, dolores adipisci quas fuga asperiores ad.
+                    </p>
+                </header>
+                <!-- Carousel of Project Feature Images -->
+                <figure class="logo">
+
+                </figure>
+            </section>
+            <!-- Blog Preview Block-->
+            <section class="blog">
+                <header class="headerSection">
+                    <h2>Journal</h2>
+                    <h1>Latest Articles</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, at nisi. Reprehenderit amet itaque, dolores adipisci quas fuga asperiores ad.
+                    </p>
+                </header>
+                <section class="blogFeature">
+
+                </section>
+            </section>
+            <!-- Contact Block -->
+            <section class="dark contact">
+                <header class="headerSection">
+                    <h2>Contact Me</h2>
+                    <h1>Ways to Contact Me</h1>
+                </header>
+                <section class="cardList contact">
+                    <article class="card contactCard">
+                        <img src="img/mail_white.png" alt="Email" class="serviceLogo"></img>
+                        <p>
+                            Email: mylestaylor496@gmail.com
+                        </p>
+                    </article>
+                    <article class="card contactCard">
+                        <img src="img/call_white.png" alt="Call" class="serviceLogo"></img>
+                        <p>
+                            PH: 0425396788
+                        </p>
+                    </article>
+                    <article class="card contactCard">
+                        <img src="img/LI-In-Bug_White.png" alt="LinkedIn" class="serviceLogo"></img>
+                        <p>
+                            LinkedIn: <a href="https://www.linkedin.com/in/myles-t-962aa41aa/">Myles Taylor</a>
+                        </p>
+                    </article>
+                </section>
+            </section>
+        </main>
+
+        <!-- Standard Footer -->
+        <footer>
+            <figure class="navLogo"></figure>
+            Copywright
+            <a href="https://github.com/MiloMT"><img src="img/github-mark-white.png" alt="Github" width, height="50px"></a>
+            <a href="https://www.linkedin.com/in/myles-t-962aa41aa/"><img src="img/LI-In-Bug_White.png" alt="LinkedIn" width, height="50px"></a>
+        </footer>
     </body>
 </html>
