@@ -20,26 +20,31 @@ $paragraphFont: 'Roboto', sans-serif;
     color: $text;
 }
 
-/* --- Mixins --- */
+/* ----- Mixins ----- */
 
+/* Base Heading Text */
 @mixin heading-default {
     font-family: $headingFont;
     font-weight: bold;
 }
 
+/* Base Paragraph Text */
 @mixin paragraph-default {
     font-family: $paragraphFont;
     font-weight: normal;
     font-size: 1em;
 }
 
+/* Highest Level Backing Container */
 @mixin background-container($backColor) {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: $backColor;
+    width: 100vw;
 }
 
+/* Second Level Content Container */
 @mixin display-container($direction, $align, $justify, $padding) {
     display: flex;
     flex-direction: $direction;
@@ -51,50 +56,56 @@ $paragraphFont: 'Roboto', sans-serif;
     width: 100%;
 }
 
-@mixin logo($width, $height) {
-    background-color: $text;
-    border-radius: 50%;
-    min-width: $width;
-    min-height: $height;
-    color: $darkBackColor;
+/* Card Image Controller */
+@mixin cardImg() {
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
 }
 
-/* --- Element Selectors --- */
+/* ----- Element Selectors ----- */
 
-/* Layout Elements */
+/* --- Layout Elements --- */
 
+/* Body Background */
 body {
     background-color: $lightBackColor;
 }
 
+/* Nav Structure */
 nav {
     @include display-container(row, center, space-between, 0.5em);
 }
 
-/* Text Elements */
+/* --- Text Elements --- */
 
+/* h1 Element Display */
 h1 {
     @include heading-default();
     font-size: 3em;
     line-height: 1.3;
 }
 
+/* h2 Element Display */
 h2 {
     @include heading-default();
     color: $accentColor;
     font-size: 1.25em;
 }
 
+/* h3 Element Display */
 h3 {
     @include paragraph-default();
     font-weight: bold;
     font-size: 1.25em;
 }
 
+/* Paragraph Element Display */
 p {
     @include paragraph-default();
 }
 
+/* Anchor Element Display */
 a {
     @include paragraph-default();
     text-decoration: none;
@@ -106,8 +117,9 @@ a {
     }
 }
 
-/* Container Elements */
+/* --- Container Elements --- */
 
+/* Call to Action Buttons */
 button {
     min-height: 3em;
     color: $accentColor;
@@ -119,71 +131,83 @@ button {
     background-color: transparent;
 }
 
-/* --- Class Selectors --- */
+/* ----- Class Selectors ----- */
 
-/* Type Containers */
+/* --- Type Containers --- */
 
+/* Light Background Containers */
 .light {
     @include background-container($lightBackColor);
 }
 
+/* Dark Background Containers */
 .dark {
     @include background-container($darkBackColor);
 }
 
+/* Card Background Containers */
 .card {
     background-color: $cardBackColor;
 }
 
+/* Placeholder till proper logo image */
 .titleLogo {
-    @include logo(15em, 15em)
+    background-color: $text;
+    border-radius: 50%;
+    min-width: 15em;
+    min-height: 15em;
+    color: $darkBackColor;
 }
-.navLogo {
-    @include logo(2em, 2em)
-}
+
+/* Controls Image Size on Service Cards */
 .serviceLogo {
     height: 2em;
     width: 2em;
 }
 
-/* Section Containers */
+/* --- Section Containers --- */
 
+/* Layout Control when single page section */
 .solo {
-    height: calc(100vh - 5em);
-    min-height: 500px;
+    min-height: calc(100vh - 5em);
 }
 
+/* Specialised Container for initial homepage section */
 .intro {
-    @include display-container(row, center, space-around, 3vw);
-    min-height: 10em;
+    @include display-container(row, center, center, 3vw);
     > * {
         margin: 1em;
     }
 }
 
+/* Container for left justified sections */
 .leftHeader {
-    @include display-container(column, flex-start, flex-start, 3vw);
+    @include display-container(row, center, flex-start, 3vw);
     .headerSection {
         text-align: left;
     }
 }
 
+/* Container for right justified sections */
 .rightHeader {
-    @include display-container(column, flex-end, flex-end, 3vw);
+    @include display-container(row-reverse, center, flex-end, 3vw);
+    flex-wrap: nowrap;
     .headerSection {
         text-align: right;
     }
 }
 
+/* Container for center justified sections */
 .centerHeader {
-    @include display-container(column, center, center, 3vw);
+    @include display-container(row, center, center, 3vw);
     .headerSection {
         text-align: center;
     }
 }
 
-/* Sub-Section Containers */
+/* --- Sub-Section Containers --- */
 
+/* Container smaller heading sections */
 .headerSection {
     max-width: 40%;
     * {
@@ -191,12 +215,14 @@ button {
     }
 }
 
+/* Container Nav anchor links */
 .navLinks {
     a {
         margin: 0em 0.3em;
     }
 }
 
+/* Container for different card type lists */
 .cardList {
     @include display-container(row, center, space-around, 0px);
     width: 100%;
@@ -204,11 +230,13 @@ button {
         margin: 1em 1em 1em 0em;
         border-radius: 15px;
     }
+    /* Services card specific */
     .service {
         width: 15em;
         height: 10em;
-        padding: 3em 1em 1em 1em;
+        padding: 2em 1em 1em 1em;
     }
+    /* Contact card specific */
     .contactCard {
         display: inline-flex;
         align-items: center;
@@ -220,14 +248,51 @@ button {
             margin: 0em 1em;
         }
     }
+    /* Blog card specific */
+    .blog {
+        width: 25em;
+        height: 15em;
+        margin: 2em 0em;
+        img {
+            @include cardImg();
+        }
+    }
 }
 
-.secondaryBlogPost {
-    width: 30%;
+/* Container for blog cards in major heading only */
+.featureBlogCards {
+    @include display-container(row, flex-start, space-around, 0px);
+    flex-wrap: nowrap;
+    width: 100%;
+    /* Hero Blog Card */
+    .main {
+        margin-right: 50px;
+        * {
+            margin-top: 10px;
+        }
+        img {
+            @include cardImg();
+        }
+    }
+    /* Secondary Blog Cards */
+    .blogColumn {
+        @include display-container(column, flex-start, flex-start, 0px);
+        .secondary {
+            width: 100%;
+            * {
+                margin-top: 10px;
+            }
+            img {
+                @include cardImg();
+                max-height: 250px;
+            }
+        }
+    }
 }
 
 /* --- ID Selectors --- */
 
+/* Overwrite for Accent Text Color if needed */
 #accent {
     color: $accentColor;
 }
@@ -235,15 +300,18 @@ button {
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
     .leftHeader {
-        @include display-container(column, center, center, 5vw);
+        @include display-container(row, center, left, 5vw);
     }
     
     .rightHeader {
-        @include display-container(column, center, center, 5vw);
+        @include display-container(row, center, right, 5vw);
+        * {
+            text-align: right;
+        }
     }
     
     .centerHeader {
-        @include display-container(column, center, center, 5vw);
+        @include display-container(row, center, center, 5vw);
     }
 
     .headerSection {
@@ -254,9 +322,23 @@ button {
     }
 
     .cardList {
-        @include display-container(row, center, center, 0px);
-        article {
-            margin: 1em 0em 0em 0em;
+        @include display-container(row, center, center, 0vw);
+        .blog{
+            img {
+                width: 90vw;
+            }
+        }
+        
+    }
+
+    .featureBlogCards {
+        @include display-container(row, center, flex-end, 0px);
+        width: 100%;
+        .main {
+            margin-right: 0px;
+        }
+        .blogColumn {
+            display: none;
         }
     }
 }
