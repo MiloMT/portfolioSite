@@ -1,3 +1,4 @@
+/* --- CSS written in style.scss file. Refer to this for review and edits --- */
 /* --- Variable Declaration --- */
 /* Color Palette */
 /* Font Selection */
@@ -20,17 +21,10 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5em;
+  padding: min(0.5em, 38.4px);
   flex-wrap: wrap;
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5em;
-  flex-wrap: wrap;
+  max-width: 1280px;
+  width: 100%;
 }
 
 /* Text Elements */
@@ -89,7 +83,17 @@ button {
 
 /* --- Class Selectors --- */
 /* Type Containers */
+.light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #262626;
+}
+
 .dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #0D0D0D;
 }
 
@@ -119,64 +123,71 @@ button {
 }
 
 /* Section Containers */
+.solo {
+  height: calc(100vh - 5em);
+  min-height: 500px;
+}
+
 .intro {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding: 3vw;
+  justify-content: space-around;
+  padding: min(3vw, 38.4px);
   flex-wrap: wrap;
+  max-width: 1280px;
+  width: 100%;
   min-height: 10em;
 }
 .intro > * {
   margin: 1em;
 }
 
-.services {
+.leftHeader {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 3vw;
+  padding: min(3vw, 38.4px);
   flex-wrap: wrap;
+  max-width: 1280px;
+  width: 100%;
+}
+.leftHeader .headerSection {
+  text-align: left;
 }
 
-.portfolio {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 3vw;
-  flex-wrap: wrap;
-}
-
-.blog {
+.rightHeader {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  padding: 3vw;
+  padding: min(3vw, 38.4px);
   flex-wrap: wrap;
+  max-width: 1280px;
+  width: 100%;
 }
-.blog .headerSection {
+.rightHeader .headerSection {
   text-align: right;
 }
 
-.contact {
+.centerHeader {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3vw;
+  padding: min(3vw, 38.4px);
   flex-wrap: wrap;
+  max-width: 1280px;
+  width: 100%;
 }
-.contact * {
+.centerHeader .headerSection {
   text-align: center;
 }
 
 /* Sub-Section Containers */
 .headerSection {
-  max-width: 40vw;
+  max-width: 40%;
 }
 .headerSection * {
   margin: 10px 0px;
@@ -190,9 +201,11 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 0px;
   flex-wrap: wrap;
+  max-width: 1280px;
+  width: 100%;
   width: 100%;
 }
 .cardList article {
@@ -219,6 +232,68 @@ button {
 /* --- ID Selectors --- */
 #accent {
   color: #1AD993;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  .leftHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: min(5vw, 38.4px);
+    flex-wrap: wrap;
+    max-width: 1280px;
+    width: 100%;
+  }
+  .rightHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: min(5vw, 38.4px);
+    flex-wrap: wrap;
+    max-width: 1280px;
+    width: 100%;
+  }
+  .centerHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: min(5vw, 38.4px);
+    flex-wrap: wrap;
+    max-width: 1280px;
+    width: 100%;
+  }
+  .headerSection {
+    max-width: 80%;
+  }
+  .headerSection * {
+    margin: 10px 0px;
+  }
+  .cardList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    width: 100%;
+  }
+  .cardList article {
+    margin: 1em 0em 0em 0em;
+  }
+}
+/* Media Query for Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .headerSection {
+    max-width: 50%;
+  }
+  .headerSection * {
+    margin: 10px 0px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

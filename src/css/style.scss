@@ -1,3 +1,4 @@
+/* --- CSS written in style.scss file. Refer to this for review and edits --- */
 /* --- Variable Declaration --- */
 
 /* Color Palette */
@@ -32,13 +33,22 @@ $paragraphFont: 'Roboto', sans-serif;
     font-size: 1em;
 }
 
+@mixin background-container($backColor) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $backColor;
+}
+
 @mixin display-container($direction, $align, $justify, $padding) {
     display: flex;
     flex-direction: $direction;
     align-items: $align;
     justify-content: $justify;
-    padding: $padding;
+    padding: min($padding, 38.4px);
     flex-wrap: wrap;
+    max-width: 1280px;
+    width: 100%;
 }
 
 @mixin logo($width, $height) {
@@ -59,11 +69,6 @@ body {
 
 nav {
     @include display-container(row, center, space-between, 0.5em);
-}
-
-footer {
-    @include display-container(column, center, space-between, 0.5em);
-    
 }
 
 /* Text Elements */
@@ -118,8 +123,12 @@ button {
 
 /* Type Containers */
 
+.light {
+    @include background-container($lightBackColor);
+}
+
 .dark {
-    background-color: $darkBackColor;
+    @include background-container($darkBackColor);
 }
 
 .card {
@@ -139,33 +148,36 @@ button {
 
 /* Section Containers */
 
+.solo {
+    height: calc(100vh - 5em);
+    min-height: 500px;
+}
+
 .intro {
-    @include display-container(row, center, center, 3vw);
+    @include display-container(row, center, space-around, 3vw);
     min-height: 10em;
     > * {
         margin: 1em;
     }
 }
 
-.services {
+.leftHeader {
     @include display-container(column, flex-start, flex-start, 3vw);
+    .headerSection {
+        text-align: left;
+    }
 }
 
-.portfolio {
-    @include display-container(column, flex-start, flex-start, 3vw);
-}
-
-.blog {
+.rightHeader {
     @include display-container(column, flex-end, flex-end, 3vw);
     .headerSection {
         text-align: right;
     }
-    
 }
 
-.contact {
+.centerHeader {
     @include display-container(column, center, center, 3vw);
-    * {
+    .headerSection {
         text-align: center;
     }
 }
@@ -173,7 +185,7 @@ button {
 /* Sub-Section Containers */
 
 .headerSection {
-    max-width: 40vw;
+    max-width: 40%;
     * {
         margin: 10px 0px;
     }
@@ -186,7 +198,7 @@ button {
 }
 
 .cardList {
-    @include display-container(row, center, center, 0px);
+    @include display-container(row, center, space-around, 0px);
     width: 100%;
     article {
         margin: 1em 1em 1em 0em;
@@ -210,8 +222,51 @@ button {
     }
 }
 
+.secondaryBlogPost {
+    width: 30%;
+}
+
 /* --- ID Selectors --- */
 
 #accent {
     color: $accentColor;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .leftHeader {
+        @include display-container(column, center, center, 5vw);
+    }
+    
+    .rightHeader {
+        @include display-container(column, center, center, 5vw);
+    }
+    
+    .centerHeader {
+        @include display-container(column, center, center, 5vw);
+    }
+
+    .headerSection {
+        max-width: 80%;
+        * {
+            margin: 10px 0px;
+        }
+    }
+
+    .cardList {
+        @include display-container(row, center, center, 0px);
+        article {
+            margin: 1em 0em 0em 0em;
+        }
+    }
+}
+  
+/* Media Query for Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .headerSection {
+        max-width: 50%;
+        * {
+            margin: 10px 0px;
+        }
+    }
 }
