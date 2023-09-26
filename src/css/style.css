@@ -15,6 +15,7 @@
 /* Base Paragraph Text */
 /* Highest Level Backing Container */
 /* Second Level Content Container */
+/* Feature Images */
 /* ----- Element Selectors ----- */
 /* --- Layout Elements --- */
 /* Body Background */
@@ -66,6 +67,7 @@ h4 {
   font-weight: normal;
   font-size: 1em;
   font-size: 0.75em;
+  font-style: italic;
 }
 
 /* Paragraph Element Display */
@@ -344,6 +346,7 @@ button {
   height: 30em;
 }
 
+/* Project List Formatting */
 .projectList {
   display: flex;
   flex-direction: column;
@@ -365,9 +368,15 @@ button {
   width: 100%;
 }
 
+/* Project List Break */
 hr.solid {
   border-top: 1px solid #F2F2F2;
   width: 100%;
+}
+
+/* Blog Post Flexbox Override */
+.blogPost {
+  align-items: flex-start;
 }
 
 /* --- ID Selectors --- */
@@ -387,11 +396,25 @@ hr.solid {
   flex-wrap: nowrap;
 }
 
+/* Tailored Settings About Page Image */
 #portraitImage {
   min-width: max(30%, 12.5em);
   max-height: 50vw;
 }
 #portraitImage img {
+  border-radius: 20px;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* Tailored Settings Blog Page Image */
+#blogImage {
+  min-width: max(30%, 12.5em);
+  max-height: 50vw;
+  margin-right: 5em;
+}
+#blogImage img {
   border-radius: 20px;
   object-fit: cover;
   height: 100%;
@@ -528,6 +551,10 @@ hr.solid {
   }
   #projectImage {
     display: none;
+  }
+  #blogImage {
+    max-height: none;
+    margin-right: 0;
   }
 }
 /* --- Media Query for Tablets, Ipads --- */

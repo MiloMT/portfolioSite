@@ -59,6 +59,18 @@ $innerContainerMargin: 5vw;
     width: 100%;
 }
 
+/* Feature Images */
+@mixin featureImage {
+    min-width: max(30%, 12.5em);
+    max-height: 50vw;
+    img {
+        border-radius: 20px;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
 /* ----- Element Selectors ----- */
 
 /* --- Layout Elements --- */
@@ -100,6 +112,7 @@ h3 {
 h4 {
     @include paragraph-default();
     font-size: 0.75em;
+    font-style: italic;
 }
 
 /* Paragraph Element Display */
@@ -320,6 +333,7 @@ button {
     }
 }
 
+/* Project List Formatting */
 .projectList {
     @include display-container(column, center, flex-start, 0px);
     .project {
@@ -327,9 +341,15 @@ button {
     }
 }
 
+/* Project List Break */
 hr.solid {
     border-top: 1px solid $text;
     width: 100%;
+}
+
+/* Blog Post Flexbox Override */
+.blogPost {
+    align-items: flex-start;
 }
 
 /* --- ID Selectors --- */
@@ -350,27 +370,20 @@ hr.solid {
     flex-wrap: nowrap;
 }
 
+/* Tailored Settings About Page Image */
 #portraitImage {
-    min-width: max(30%, 12.5em);
-    max-height: 50vw;
-    img {
-        border-radius: 20px;
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-    }
+    @include featureImage();
+}
+
+/* Tailored Settings Blog Page Image */
+#blogImage {
+    @include featureImage();
+    margin-right: 5em;
 }
 
 /* Tailored Settings Portfolio Image */
 #projectImage {
-    min-width: max(30%, 12.5em);
-    max-height: 50vw;
-    img {
-        border-radius: 20px;
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-    }
+    @include featureImage();
 }
 
 /* ----- Media Controllers ----- */
@@ -464,6 +477,11 @@ hr.solid {
 
     #projectImage {
         display: none;
+    }
+
+    #blogImage {
+        max-height: none;
+        margin-right: 0;
     }
 }
   
