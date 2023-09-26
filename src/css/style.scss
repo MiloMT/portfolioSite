@@ -63,8 +63,9 @@ $innerContainerMargin: 5vw;
 @mixin featureImage {
     min-width: max(30%, 12.5em);
     max-height: 50vw;
+    overflow: hidden;
+    border-radius: 20px;
     img {
-        border-radius: 20px;
         object-fit: cover;
         height: 100%;
         width: 100%;
@@ -167,17 +168,27 @@ button {
 
 /* Placeholder till proper logo image */
 .titleLogo {
-    background-color: $text;
     border-radius: 50%;
-    min-width: 15em;
-    min-height: 15em;
+    width: 15em;
+    height: 15em;
     color: $darkBackColor;
+    object-fit: cover;
+    overflow: hidden;
+    img {
+        height: 100%;
+    }
 }
 
 /* Controls Image Size on Service Cards */
 .serviceLogo {
     height: 2em;
     width: 2em;
+}
+
+.navLogo {
+    img {
+        height: 2em;
+    }
 }
 
 /* --- Section Containers --- */
@@ -392,6 +403,7 @@ hr.solid {
 /* Tailored Settings Portfolio Image */
 #projectImage {
     @include featureImage();
+    max-width: 40%;
 }
 
 /* ----- Animations ----- */

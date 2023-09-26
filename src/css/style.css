@@ -129,17 +129,25 @@ button {
 
 /* Placeholder till proper logo image */
 .titleLogo {
-  background-color: #F2F2F2;
   border-radius: 50%;
-  min-width: 15em;
-  min-height: 15em;
+  width: 15em;
+  height: 15em;
   color: #0D0D0D;
+  object-fit: cover;
+  overflow: hidden;
+}
+.titleLogo img {
+  height: 100%;
 }
 
 /* Controls Image Size on Service Cards */
 .serviceLogo {
   height: 2em;
   width: 2em;
+}
+
+.navLogo img {
+  height: 2em;
 }
 
 /* --- Section Containers --- */
@@ -408,9 +416,10 @@ hr.solid {
 #portraitImage {
   min-width: max(30%, 12.5em);
   max-height: 50vw;
+  overflow: hidden;
+  border-radius: 20px;
 }
 #portraitImage img {
-  border-radius: 20px;
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -420,10 +429,11 @@ hr.solid {
 #blogImage {
   min-width: max(30%, 12.5em);
   max-height: 50vw;
+  overflow: hidden;
+  border-radius: 20px;
   margin-right: 5em;
 }
 #blogImage img {
-  border-radius: 20px;
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -433,9 +443,11 @@ hr.solid {
 #projectImage {
   min-width: max(30%, 12.5em);
   max-height: 50vw;
+  overflow: hidden;
+  border-radius: 20px;
+  max-width: 40%;
 }
 #projectImage img {
-  border-radius: 20px;
   object-fit: cover;
   height: 100%;
   width: 100%;
