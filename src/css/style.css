@@ -2,6 +2,7 @@
 /* --- Variable Declaration --- */
 /* Color Palette */
 /* Font Selection */
+/* Default Parameters */
 /* --- Wildcard Selector --- */
 * {
   margin: 0em;
@@ -14,7 +15,6 @@
 /* Base Paragraph Text */
 /* Highest Level Backing Container */
 /* Second Level Content Container */
-/* Card Image Controller */
 /* ----- Element Selectors ----- */
 /* --- Layout Elements --- */
 /* Body Background */
@@ -28,8 +28,8 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: min(0.5em, 38.4px);
   flex-wrap: wrap;
+  margin: min(0.5em, 38.4px);
   max-width: 1280px;
   width: 100%;
 }
@@ -102,7 +102,6 @@ button {
   align-items: center;
   justify-content: center;
   background-color: #262626;
-  width: 100vw;
 }
 
 /* Dark Background Containers */
@@ -111,7 +110,6 @@ button {
   align-items: center;
   justify-content: center;
   background-color: #0D0D0D;
-  width: 100vw;
 }
 
 /* Card Background Containers */
@@ -146,13 +144,16 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: min(3vw, 38.4px);
   flex-wrap: wrap;
+  margin: min(5vw, 38.4px);
   max-width: 1280px;
   width: 100%;
 }
 .intro > * {
   margin: 1em;
+}
+.intro .headerSection {
+  max-width: 40%;
 }
 
 /* Container for left justified sections */
@@ -161,13 +162,14 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding: min(3vw, 38.4px);
   flex-wrap: wrap;
+  margin: min(5vw, 38.4px);
   max-width: 1280px;
   width: 100%;
 }
 .leftHeader .headerSection {
   text-align: left;
+  margin-right: 10%;
 }
 
 /* Container for right justified sections */
@@ -176,14 +178,15 @@ button {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: flex-end;
-  padding: min(3vw, 38.4px);
   flex-wrap: wrap;
+  margin: min(5vw, 38.4px);
   max-width: 1280px;
   width: 100%;
   flex-wrap: nowrap;
 }
 .rightHeader .headerSection {
   text-align: right;
+  margin-left: 10%;
 }
 
 /* Container for center justified sections */
@@ -192,8 +195,8 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: min(3vw, 38.4px);
   flex-wrap: wrap;
+  margin: min(5vw, 38.4px);
   max-width: 1280px;
   width: 100%;
 }
@@ -204,7 +207,8 @@ button {
 /* --- Sub-Section Containers --- */
 /* Container smaller heading sections */
 .headerSection {
-  max-width: 40%;
+  max-width: 100%;
+  z-index: 10;
 }
 .headerSection * {
   margin: 10px 0px;
@@ -221,17 +225,16 @@ button {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding: 0px;
   flex-wrap: wrap;
+  margin: 0px;
   max-width: 1280px;
-  width: 100%;
   width: 100%;
   /* Services card specific */
   /* Contact card specific */
   /* Blog card specific */
 }
 .cardList article {
-  margin: 1em 1em 1em 0em;
+  margin: 1em;
   border-radius: 15px;
 }
 .cardList .service {
@@ -255,11 +258,6 @@ button {
   height: 15em;
   margin: 2em 0em;
 }
-.cardList .blog img {
-  object-fit: cover;
-  object-position: center center;
-  width: 100%;
-}
 
 /* Container for blog cards in major heading only */
 .featureBlogCards {
@@ -267,8 +265,8 @@ button {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
-  padding: 0px;
   flex-wrap: wrap;
+  margin: 0px;
   max-width: 1280px;
   width: 100%;
   flex-wrap: nowrap;
@@ -282,18 +280,13 @@ button {
 .featureBlogCards .main * {
   margin-top: 10px;
 }
-.featureBlogCards .main img {
-  object-fit: cover;
-  object-position: center center;
-  width: 100%;
-}
 .featureBlogCards .blogColumn {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px;
   flex-wrap: wrap;
+  margin: 0px;
   max-width: 1280px;
   width: 100%;
 }
@@ -303,11 +296,18 @@ button {
 .featureBlogCards .blogColumn .secondary * {
   margin-top: 10px;
 }
-.featureBlogCards .blogColumn .secondary img {
-  object-fit: cover;
-  object-position: center center;
-  width: 100%;
-  max-height: 250px;
+
+/* Image Container */
+.headerImage {
+  display: flex;
+  justify-content: center;
+  max-height: 30em;
+  max-width: 60vw;
+  overflow: hidden;
+  margin: calc(-1 * min(5vw, 38.4px));
+}
+.headerImage img {
+  height: 30em;
 }
 
 /* --- ID Selectors --- */
@@ -316,15 +316,28 @@ button {
   color: #1AD993;
 }
 
+#headerImage {
+  max-width: 40%;
+  min-height: 100%;
+  height: fit-content;
+}
+
+#wrapChange {
+  flex-wrap: nowrap;
+}
+
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
+  .intro .headerSection {
+    max-width: 100%;
+  }
   .leftHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: left;
-    padding: min(5vw, 38.4px);
     flex-wrap: wrap;
+    margin: min(5vw, 38.4px);
     max-width: 1280px;
     width: 100%;
   }
@@ -333,8 +346,8 @@ button {
     flex-direction: row;
     align-items: center;
     justify-content: right;
-    padding: min(5vw, 38.4px);
     flex-wrap: wrap;
+    margin: min(5vw, 38.4px);
     max-width: 1280px;
     width: 100%;
   }
@@ -346,37 +359,34 @@ button {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: min(5vw, 38.4px);
     flex-wrap: wrap;
+    margin: min(5vw, 38.4px);
     max-width: 1280px;
     width: 100%;
-  }
-  .headerSection {
-    max-width: 80%;
-  }
-  .headerSection * {
-    margin: 10px 0px;
   }
   .cardList {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: min(0vw, 38.4px);
     flex-wrap: wrap;
+    margin: min(0vw, 38.4px);
     max-width: 1280px;
     width: 100%;
   }
   .cardList .blog img {
     width: 90vw;
   }
+  .cardList .contactCard {
+    width: 100%;
+  }
   .featureBlogCards {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    padding: 0px;
     flex-wrap: wrap;
+    margin: 0px;
     max-width: 1280px;
     width: 100%;
     width: 100%;
@@ -387,14 +397,25 @@ button {
   .featureBlogCards .blogColumn {
     display: none;
   }
+  .headerImage {
+    display: flex;
+    justify-content: center;
+    max-width: 100vw;
+    width: 100vw;
+    overflow: hidden;
+    margin: 5vw calc(-1 * min(5vw, 38.4px)) calc(-1 * min(5vw, 38.4px)) calc(-1 * min(5vw, 38.4px));
+  }
+  .headerImage img {
+    height: 15em;
+  }
+  #wrapChange {
+    flex-wrap: wrap;
+  }
 }
 /* Media Query for Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 1024px) {
   .headerSection {
-    max-width: 50%;
-  }
-  .headerSection * {
-    margin: 10px 0px;
+    max-width: 60vw;
   }
 }
 
