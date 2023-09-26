@@ -185,6 +185,17 @@ button {
     }
 }
 
+/* Specialised Container for portfolio page */
+.portfolio {
+    @include display-container(row-reverse, center, space-between, $innerContainerMargin);
+    flex-wrap: nowrap;
+    .headerSection {
+        width: 50%;
+        text-align: right;
+        margin-left: 10%;
+    }
+}
+
 /* Container for left justified sections */
 .leftHeader {
     @include display-container(row, center, flex-start, $innerContainerMargin);
@@ -309,6 +320,18 @@ button {
     }
 }
 
+.projectList {
+    @include display-container(column, center, flex-start, 0px);
+    .project {
+        @include display-container(row, center, space-between, 0px);
+    }
+}
+
+hr.solid {
+    border-top: 1px solid $text;
+    width: 100%;
+}
+
 /* --- ID Selectors --- */
 
 /* Overwrite for Accent Text Color if needed */
@@ -338,6 +361,18 @@ button {
     }
 }
 
+/* Tailored Settings Portfolio Image */
+#projectImage {
+    min-width: max(30%, 12.5em);
+    max-height: 50vw;
+    img {
+        border-radius: 20px;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
 /* ----- Media Controllers ----- */
 /* --- Media Query for Mobile Devices --- */
 @media (max-width: 480px) {
@@ -346,6 +381,16 @@ button {
     .intro {
         .headerSection {
             max-width: 100%;
+        }
+    }
+
+    /* Specialised Container for portfolio page */
+    .portfolio {
+        @include display-container(row-reverse, center, space-between, $innerContainerMargin);
+        .headerSection {
+            width: 100%;
+            text-align: right;
+            margin-left: 0;
         }
     }
 
@@ -415,6 +460,10 @@ button {
     /* Adjusting Portrait Image height */
     #portraitImage {
         max-height: none;
+    }
+
+    #projectImage {
+        display: none;
     }
 }
   

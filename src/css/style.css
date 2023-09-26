@@ -164,6 +164,24 @@ button {
   max-width: 40%;
 }
 
+/* Specialised Container for portfolio page */
+.portfolio {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: min(5vw, 38.4px);
+  max-width: 1280px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.portfolio .headerSection {
+  width: 50%;
+  text-align: right;
+  margin-left: 10%;
+}
+
 /* Container for left justified sections */
 .leftHeader {
   display: flex;
@@ -326,6 +344,32 @@ button {
   height: 30em;
 }
 
+.projectList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0px;
+  max-width: 1280px;
+  width: 100%;
+}
+.projectList .project {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0px;
+  max-width: 1280px;
+  width: 100%;
+}
+
+hr.solid {
+  border-top: 1px solid #F2F2F2;
+  width: 100%;
+}
+
 /* --- ID Selectors --- */
 /* Overwrite for Accent Text Color if needed */
 #accent {
@@ -354,12 +398,40 @@ button {
   width: 100%;
 }
 
+/* Tailored Settings Portfolio Image */
+#projectImage {
+  min-width: max(30%, 12.5em);
+  max-height: 50vw;
+}
+#projectImage img {
+  border-radius: 20px;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
 /* ----- Media Controllers ----- */
 /* --- Media Query for Mobile Devices --- */
 @media (max-width: 480px) {
   /* Centering homepage content on small device */
   .intro .headerSection {
     max-width: 100%;
+  }
+  /* Specialised Container for portfolio page */
+  .portfolio {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: min(5vw, 38.4px);
+    max-width: 1280px;
+    width: 100%;
+  }
+  .portfolio .headerSection {
+    width: 100%;
+    text-align: right;
+    margin-left: 0;
   }
   /* Centering header types for content */
   .leftHeader {
@@ -453,6 +525,9 @@ button {
   /* Adjusting Portrait Image height */
   #portraitImage {
     max-height: none;
+  }
+  #projectImage {
+    display: none;
   }
 }
 /* --- Media Query for Tablets, Ipads --- */
