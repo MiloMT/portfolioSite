@@ -269,14 +269,22 @@ button {
     }
     /* Contact card specific */
     .contactCard {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         height: 3em;
-        padding: 1em 1em 1em 1em;
+        padding: 0.5em;
         * {
             color: $accentColor;
             font-weight: bold;
             margin: 0em 1em;
+        }
+        a {
+            display: inherit;
+            align-items: inherit;
+            margin: 0;
+        }
+        img {
+            margin: 0 0.5em;
         }
     }
     /* Blog card specific */
@@ -385,6 +393,8 @@ hr.solid {
 #projectImage {
     @include featureImage();
 }
+
+/* ----- Animations ----- */
 
 /* ----- Media Controllers ----- */
 /* --- Media Query for Mobile Devices --- */
