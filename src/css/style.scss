@@ -96,6 +96,12 @@ h3 {
     font-size: 1.25em;
 }
 
+/* h4 Element Display */
+h4 {
+    @include paragraph-default();
+    font-size: 0.75em;
+}
+
 /* Paragraph Element Display */
 p {
     @include paragraph-default();
@@ -226,7 +232,7 @@ button {
 
 /* Container for different card type lists */
 .cardList {
-    @include display-container(row, center, space-around, 0px);
+    @include display-container(row, center, center, 0px);
     article {
         margin: 1em;
         border-radius: 15px;
@@ -251,9 +257,13 @@ button {
     }
     /* Blog card specific */
     .blog {
-        width: 25em;
-        height: 15em;
-        margin: 2em 0em;
+        max-width: 20em;
+        max-height: 12.5em;
+        img {
+            object-fit: cover;
+            max-width: 100%;
+            border-radius: 5px;
+        }
     }
 }
 
@@ -279,6 +289,11 @@ button {
             }
         }
     }
+
+    img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
 }
 
 /* Image Container */
@@ -301,45 +316,63 @@ button {
     color: $accentColor;
 }
 
+/* Override for figures holding homepage images */
 #headerImage {
     max-width: 40%;
-    min-height: 100%;
     height: fit-content;
 }
 
+/* Temporary flex-wrap changes */
 #wrapChange {
     flex-wrap: nowrap;
 }
 
-/* Media Query for Mobile Devices */
+#portraitImage {
+    min-width: 30%;
+    max-height: 50vw;
+    img {
+        border-radius: 20px;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+/* ----- Media Controllers ----- */
+/* --- Media Query for Mobile Devices --- */
 @media (max-width: 480px) {
 
+    /* Centering homepage content on small device */
     .intro {
         .headerSection {
             max-width: 100%;
         }
     }
 
+    /* Centering header types for content */
     .leftHeader {
-        @include display-container(row, center, left, 5vw);
+        @include display-container(row, center, left, $innerContainerMargin);
     }
     
     .rightHeader {
-        @include display-container(row, center, right, 5vw);
+        @include display-container(row, center, right, $innerContainerMargin);
         * {
             text-align: right;
         }
     }
     
     .centerHeader {
-        @include display-container(row, center, center, 5vw);
+        @include display-container(row, center, center, $innerContainerMargin);
     }
 
+    /* Adjusting card list to center line */
     .cardList {
         @include display-container(row, center, center, 0vw);
+        max-width: 100vw;
         .blog{
+            width: 100%;
             img {
-                width: 90vw;
+                width: 100%;
             }
         }
         .contactCard {
@@ -348,17 +381,20 @@ button {
         
     }
 
+    /* Removing secondary feature posts */
     .featureBlogCards {
         @include display-container(row, center, flex-end, 0px);
         width: 100%;
         .main {
             margin-right: 0px;
         }
+
         .blogColumn {
             display: none;
         }
     }
 
+    /* Adjusting header images to below content */
     .headerImage {
         display: flex;
         justify-content: center;
@@ -371,14 +407,47 @@ button {
         }
     }
 
+    /* Removing temporary wrap changes */
     #wrapChange {
         flex-wrap: wrap;
     }
 }
   
-/* Media Query for Tablets, Ipads */
+/* --- Media Query for Tablets, Ipads --- */
 @media (min-width: 481px) and (max-width: 1024px) {
+
+    /* Adjusting Header Width for midsize */
     .headerSection {
         max-width: 60vw;
+    }
+
+    /* Blog Page Layout Changes */
+    .featureBlogCards {
+        @include display-container(column, flex-start, space-around, 0px);
+        flex-wrap: nowrap;
+        width: 100%;
+        /* Hero Blog Card */
+        .main {
+            margin-right: 0px;
+            * {
+                margin-top: 0px;
+            }
+        }
+        /* Secondary Blog Cards */
+        .blogColumn {
+            @include display-container(row, flex-start, space-between, 0px);
+            margin-top: 20px;
+            .secondary {
+                width: 45%;
+                * {
+                    margin-top: 10px;
+                }
+            }
+        }
+    
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
     }
 }
