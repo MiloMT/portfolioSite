@@ -344,7 +344,7 @@ button {
 }
 
 #portraitImage {
-  min-width: 30%;
+  min-width: max(30%, 12.5em);
   max-height: 50vw;
 }
 #portraitImage img {
@@ -449,6 +449,10 @@ button {
   /* Removing temporary wrap changes */
   #wrapChange {
     flex-wrap: wrap;
+  }
+  /* Adjusting Portrait Image height */
+  #portraitImage {
+    max-height: none;
   }
 }
 /* --- Media Query for Tablets, Ipads --- */
