@@ -80,17 +80,13 @@ button {
     background-color: transparent;
 }
 
-.navLinks a {
-    margin: 0 0.3em;
+.accent {
+    color: $accentColor;
 }
 
 hr.solid {
     border-top: 1px solid $text;
     width: 100%;
-}
-
-#accent {
-    color: $accentColor;
 }
 
 /* || CONTAINERS */
@@ -104,19 +100,23 @@ hr.solid {
 }
 
 /* Second Level Content Container */
-@mixin display-container($direction, $align, $justify, $margin) {
+@mixin display-container($direction, $justify, $align, $margin) {
     display: flex;
     flex-direction: $direction;
-    align-items: $align;
     justify-content: $justify;
+    align-items: $align;
     flex-wrap: wrap;
-    margin: min($margin, 38.4px);
+    margin: min($margin, 40px); /* 40px limit to stop container growing with wide screens */
     max-width: 1280px;
     width: 100%;
+    height: 100%;
 }
 
 nav {
-    @include display-container(row, center, space-between, 0.5em);
+    @include display-container(row, space-between, center, 0.5em);
+    a {
+        margin: 0 0.3em;
+    }
 }
 
 .outerLight {
@@ -131,12 +131,8 @@ nav {
     min-height: calc(100vh - 5em);
 }
 
-.card {
-    background-color: $cardBackColor;
-}
-
 .leftHeader {
-    @include display-container(row, center, flex-start, $innerContainerMargin);
+    @include display-container(row, flex-start, center, $innerContainerMargin);
     .headerSection {
         text-align: left;
         margin-right: 10%;
@@ -144,7 +140,7 @@ nav {
 }
 
 .rightHeader {
-    @include display-container(row-reverse, center, flex-end, $innerContainerMargin);
+    @include display-container(row-reverse, flex-end, center, $innerContainerMargin);
     flex-wrap: nowrap;
     .headerSection {
         text-align: right;
@@ -165,6 +161,10 @@ nav {
     * {
         margin: 10px 0;
     }
+}
+
+.card {
+    background-color: $cardBackColor;
 }
 
 .cardList {
@@ -211,37 +211,8 @@ nav {
     }
 }
 
-#wrapChange {
+.wrapChange {
     flex-wrap: nowrap;
-}
-
-/* Container for blog cards in major heading only */
-.featureBlogCards {
-    @include display-container(row, flex-start, space-around, 0);
-    flex-wrap: nowrap;
-    width: 100%;
-    /* Hero Blog Card */
-    .main {
-        margin-right: 50px;
-        * {
-            margin-top: 10px;
-        }
-    }
-    /* Secondary Blog Cards */
-    .blogColumn {
-        @include display-container(column, flex-start, flex-start, 0);
-        .secondary {
-            width: 100%;
-            * {
-                margin-top: 10px;
-            }
-        }
-    }
-
-    img {
-        max-width: 100%;
-        border-radius: 5px;
-    }
 }
 
 /* || IMAGE HANDLING */
@@ -273,7 +244,7 @@ nav {
     width: 2em;
 }
 
-.headerImage {
+.heroImage {
     display: flex;
     justify-content: center;
     max-height: 30em;
@@ -285,21 +256,20 @@ nav {
     }
 }
 
-#headerImage {
-    max-width: 40%;
-    height: fit-content;
+.imageTop {
+    align-items: flex-start;
 }
 
-#portraitImage {
+.portraitImage {
     @include featureImage();
 }
 
-#blogImage {
+.postImage {
     @include featureImage();
     margin-right: 2em;
 }
 
-#projectImage {
+.projectImage {
     @include featureImage();
     max-width: 40%;
 }
@@ -317,7 +287,7 @@ nav {
 }
 
 .portfolio {
-    @include display-container(row-reverse, center, space-between, $innerContainerMargin);
+    @include display-container(row-reverse, space-between, center, $innerContainerMargin);
     flex-wrap: nowrap;
     .headerSection {
         width: 50%;
@@ -327,15 +297,38 @@ nav {
 }
 
 .projectList {
-    @include display-container(column, center, flex-start, 0);
+    @include display-container(column, flex-start, center, 0);
     .project {
-        @include display-container(row, center, space-between, 0);
+        @include display-container(row, space-between, center, 0);
     }
 }
 
-/* To be removed */
-.blogPost {
-    align-items: flex-start;
+.featureBlogCards {
+    @include display-container(row, space-around, flex-start, 0);
+    flex-wrap: nowrap;
+    width: 100%;
+    /* Hero Blog Card */
+    .main {
+        margin-right: 50px;
+        * {
+            margin-top: 10px;
+        }
+    }
+    /* Secondary Blog Cards */
+    .blogColumn {
+        @include display-container(column, flex-start, flex-start, 0);
+        .secondary {
+            width: 100%;
+            * {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 5px;
+    }
 }
 
 /* || Media Queries */
@@ -345,11 +338,11 @@ nav {
     /* || CONTAINERS */
 
     .leftHeader {
-        @include display-container(row, center, left, $innerContainerMargin);
+        @include display-container(row, left, center, $innerContainerMargin);
     }
     
     .rightHeader {
-        @include display-container(row, center, right, $innerContainerMargin);
+        @include display-container(row, right, center, $innerContainerMargin);
         * {
             text-align: right;
         }
@@ -379,7 +372,7 @@ nav {
     }
     
     .featureBlogCards {
-        @include display-container(row, center, flex-end, 0);
+        @include display-container(row, flex-end, center, 0);
         width: 100%;
         .main {
             margin-right: 0;
@@ -390,9 +383,13 @@ nav {
         }
     }
 
+    .wrapChange {
+        flex-wrap: wrap;
+    }
+
     /* || IMAGE HANDLING */
 
-    .headerImage {
+    .heroImage {
         display: flex;
         justify-content: center;
         max-width: 100vw;
@@ -404,6 +401,20 @@ nav {
         }
     }
 
+    .portraitImage {
+        max-height: none;
+        max-width: 90vw;
+    }
+
+    .projectImage {
+        display: none;
+    }
+
+    .postImage {
+        max-height: none;
+        margin-right: 0;
+        max-width: 90vw;
+    }
     /* || PAGE SPECIFIC */
 
     .intro {
@@ -413,33 +424,12 @@ nav {
     }
 
     .portfolio {
-        @include display-container(row-reverse, center, space-between, $innerContainerMargin);
+        @include display-container(row-reverse, space-between, center, $innerContainerMargin);
         .headerSection {
             width: 100%;
             text-align: right;
             margin-left: 0;
         }
-    }
-
-    /* Removing temporary wrap changes */
-    #wrapChange {
-        flex-wrap: wrap;
-    }
-
-    /* Adjusting Portrait Image height */
-    #portraitImage {
-        max-height: none;
-        max-width: 90vw;
-    }
-
-    #projectImage {
-        display: none;
-    }
-
-    #blogImage {
-        max-height: none;
-        margin-right: 0;
-        max-width: 90vw;
     }
 }
 
@@ -453,7 +443,7 @@ nav {
     }
 
     .featureBlogCards {
-        @include display-container(column, flex-start, space-around, 0);
+        @include display-container(column, space-around, flex-start, 0);
         flex-wrap: nowrap;
         width: 100%;
         /* Hero Blog Card */
@@ -464,7 +454,7 @@ nav {
             }
         }
         .blogColumn {
-            @include display-container(row, flex-start, space-between, 0);
+            @include display-container(row, space-between, flex-start, 0);
             margin-top: 20px;
             .secondary {
                 width: 45%;

@@ -65,17 +65,13 @@ button {
   background-color: transparent;
 }
 
-.navLinks a {
-  margin: 0 0.3em;
+.accent {
+  color: #1AD993;
 }
 
 hr.solid {
   border-top: 1px solid #F2F2F2;
   width: 100%;
-}
-
-#accent {
-  color: #1AD993;
 }
 
 /* || CONTAINERS */
@@ -84,12 +80,16 @@ hr.solid {
 nav {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  margin: min(0.5em, 38.4px);
+  margin: min(0.5em, 40px); /* 40px limit to stop container growing with wide screens */
   max-width: 1280px;
   width: 100%;
+  height: 100%;
+}
+nav a {
+  margin: 0 0.3em;
 }
 
 .outerLight {
@@ -110,19 +110,16 @@ nav {
   min-height: calc(100vh - 5em);
 }
 
-.card {
-  background-color: #8C8C8C;
-}
-
 .leftHeader {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
-  margin: min(5vw, 38.4px);
+  margin: min(5vw, 40px); /* 40px limit to stop container growing with wide screens */
   max-width: 1280px;
   width: 100%;
+  height: 100%;
 }
 .leftHeader .headerSection {
   text-align: left;
@@ -132,12 +129,13 @@ nav {
 .rightHeader {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
   justify-content: flex-end;
+  align-items: center;
   flex-wrap: wrap;
-  margin: min(5vw, 38.4px);
+  margin: min(5vw, 40px); /* 40px limit to stop container growing with wide screens */
   max-width: 1280px;
   width: 100%;
+  height: 100%;
   flex-wrap: nowrap;
 }
 .rightHeader .headerSection {
@@ -148,12 +146,13 @@ nav {
 .centerHeader {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  margin: min(5vw, 38.4px);
+  margin: min(5vw, 40px); /* 40px limit to stop container growing with wide screens */
   max-width: 1280px;
   width: 100%;
+  height: 100%;
 }
 .centerHeader .headerSection {
   text-align: center;
@@ -167,15 +166,20 @@ nav {
   margin: 10px 0;
 }
 
+.card {
+  background-color: #8C8C8C;
+}
+
 .cardList {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  margin: 0;
+  margin: 0; /* 40px limit to stop container growing with wide screens */
   max-width: 1280px;
   width: 100%;
+  height: 100%;
   /* Services card specific */
   /* Contact card specific */
   /* Blog card specific */
@@ -218,50 +222,8 @@ nav {
   border-radius: 5px;
 }
 
-#wrapChange {
+.wrapChange {
   flex-wrap: nowrap;
-}
-
-/* Container for blog cards in major heading only */
-.featureBlogCards {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 0;
-  max-width: 1280px;
-  width: 100%;
-  flex-wrap: nowrap;
-  width: 100%;
-  /* Hero Blog Card */
-  /* Secondary Blog Cards */
-}
-.featureBlogCards .main {
-  margin-right: 50px;
-}
-.featureBlogCards .main * {
-  margin-top: 10px;
-}
-.featureBlogCards .blogColumn {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin: 0;
-  max-width: 1280px;
-  width: 100%;
-}
-.featureBlogCards .blogColumn .secondary {
-  width: 100%;
-}
-.featureBlogCards .blogColumn .secondary * {
-  margin-top: 10px;
-}
-.featureBlogCards img {
-  max-width: 100%;
-  border-radius: 5px;
 }
 
 /* || IMAGE HANDLING */
@@ -280,7 +242,7 @@ nav {
   width: 2em;
 }
 
-.headerImage {
+.heroImage {
   display: flex;
   justify-content: center;
   max-height: 30em;
@@ -288,48 +250,47 @@ nav {
   overflow: hidden;
   margin: calc(-1 * min(5vw, 38.4px));
 }
-.headerImage img {
+.heroImage img {
   height: 30em;
 }
 
-#headerImage {
-  max-width: 40%;
-  height: fit-content;
+.imageTop {
+  align-items: flex-start;
 }
 
-#portraitImage {
+.portraitImage {
   max-width: 40%;
   max-height: 50vw;
   overflow: hidden;
   border-radius: 20px;
 }
-#portraitImage img {
+.portraitImage img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
 
-#blogImage {
+.postImage {
   max-width: 40%;
   max-height: 50vw;
   overflow: hidden;
   border-radius: 20px;
   margin-right: 2em;
 }
-#blogImage img {
+.postImage img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
 
-#projectImage {
+.projectImage {
   max-width: 40%;
   max-height: 50vw;
   overflow: hidden;
   border-radius: 20px;
   max-width: 40%;
 }
-#projectImage img {
+.projectImage img {
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -339,12 +300,13 @@ nav {
 .intro {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  margin: min(5vw, 38.4px);
+  margin: min(5vw, 40px); /* 40px limit to stop container growing with wide screens */
   max-width: 1280px;
   width: 100%;
+  height: 100%;
 }
 .intro > * {
   margin: 1em;
@@ -356,12 +318,13 @@ nav {
 .portfolio {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  margin: min(5vw, 38.4px);
+  margin: min(5vw, 40px); /* 40px limit to stop container growing with wide screens */
   max-width: 1280px;
   width: 100%;
+  height: 100%;
   flex-wrap: nowrap;
 }
 .portfolio .headerSection {
@@ -373,27 +336,67 @@ nav {
 .projectList {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
-  margin: 0;
+  margin: 0; /* 40px limit to stop container growing with wide screens */
   max-width: 1280px;
   width: 100%;
+  height: 100%;
 }
 .projectList .project {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  margin: 0;
+  margin: 0; /* 40px limit to stop container growing with wide screens */
   max-width: 1280px;
   width: 100%;
+  height: 100%;
 }
 
-/* To be removed */
-.blogPost {
+.featureBlogCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0; /* 40px limit to stop container growing with wide screens */
+  max-width: 1280px;
+  width: 100%;
+  height: 100%;
+  flex-wrap: nowrap;
+  width: 100%;
+  /* Hero Blog Card */
+  /* Secondary Blog Cards */
+}
+.featureBlogCards .main {
+  margin-right: 50px;
+}
+.featureBlogCards .main * {
+  margin-top: 10px;
+}
+.featureBlogCards .blogColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0; /* 40px limit to stop container growing with wide screens */
+  max-width: 1280px;
+  width: 100%;
+  height: 100%;
+}
+.featureBlogCards .blogColumn .secondary {
+  width: 100%;
+}
+.featureBlogCards .blogColumn .secondary * {
+  margin-top: 10px;
+}
+.featureBlogCards img {
+  max-width: 100%;
+  border-radius: 5px;
 }
 
 /* || Media Queries */
@@ -403,22 +406,24 @@ nav {
   .leftHeader {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: left;
+    align-items: center;
     flex-wrap: wrap;
-    margin: min(5vw, 38.4px);
+    margin: min(5vw, 40px); /* 40px limit to stop container growing with wide screens */
     max-width: 1280px;
     width: 100%;
+    height: 100%;
   }
   .rightHeader {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: right;
+    align-items: center;
     flex-wrap: wrap;
-    margin: min(5vw, 38.4px);
+    margin: min(5vw, 40px); /* 40px limit to stop container growing with wide screens */
     max-width: 1280px;
     width: 100%;
+    height: 100%;
   }
   .rightHeader * {
     text-align: right;
@@ -426,22 +431,24 @@ nav {
   .centerHeader {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    margin: min(5vw, 38.4px);
+    margin: min(5vw, 40px); /* 40px limit to stop container growing with wide screens */
     max-width: 1280px;
     width: 100%;
+    height: 100%;
   }
   .cardList {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    margin: min(0vw, 38.4px);
+    margin: min(0vw, 40px); /* 40px limit to stop container growing with wide screens */
     max-width: 1280px;
     width: 100%;
+    height: 100%;
     max-width: 100vw;
   }
   .cardList .blog {
@@ -459,12 +466,13 @@ nav {
   .featureBlogCards {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: flex-end;
+    align-items: center;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 0; /* 40px limit to stop container growing with wide screens */
     max-width: 1280px;
     width: 100%;
+    height: 100%;
     width: 100%;
   }
   .featureBlogCards .main {
@@ -473,8 +481,11 @@ nav {
   .featureBlogCards .blogColumn {
     display: none;
   }
+  .wrapChange {
+    flex-wrap: wrap;
+  }
   /* || IMAGE HANDLING */
-  .headerImage {
+  .heroImage {
     display: flex;
     justify-content: center;
     max-width: 100vw;
@@ -482,8 +493,20 @@ nav {
     overflow: hidden;
     margin: 5vw calc(-1 * min(5vw, 38.4px)) calc(-1 * min(5vw, 38.4px)) calc(-1 * min(5vw, 38.4px));
   }
-  .headerImage img {
+  .heroImage img {
     height: 15em;
+  }
+  .portraitImage {
+    max-height: none;
+    max-width: 90vw;
+  }
+  .projectImage {
+    display: none;
+  }
+  .postImage {
+    max-height: none;
+    margin-right: 0;
+    max-width: 90vw;
   }
   /* || PAGE SPECIFIC */
   .intro .headerSection {
@@ -492,34 +515,18 @@ nav {
   .portfolio {
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    margin: min(5vw, 38.4px);
+    margin: min(5vw, 40px); /* 40px limit to stop container growing with wide screens */
     max-width: 1280px;
     width: 100%;
+    height: 100%;
   }
   .portfolio .headerSection {
     width: 100%;
     text-align: right;
     margin-left: 0;
-  }
-  /* Removing temporary wrap changes */
-  #wrapChange {
-    flex-wrap: wrap;
-  }
-  /* Adjusting Portrait Image height */
-  #portraitImage {
-    max-height: none;
-    max-width: 90vw;
-  }
-  #projectImage {
-    display: none;
-  }
-  #blogImage {
-    max-height: none;
-    margin-right: 0;
-    max-width: 90vw;
   }
 }
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -531,12 +538,13 @@ nav {
   .featureBlogCards {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: space-around;
+    align-items: flex-start;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 0; /* 40px limit to stop container growing with wide screens */
     max-width: 1280px;
     width: 100%;
+    height: 100%;
     flex-wrap: nowrap;
     width: 100%;
     /* Hero Blog Card */
@@ -550,12 +558,13 @@ nav {
   .featureBlogCards .blogColumn {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: flex-start;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 0; /* 40px limit to stop container growing with wide screens */
     max-width: 1280px;
     width: 100%;
+    height: 100%;
     margin-top: 20px;
   }
   .featureBlogCards .blogColumn .secondary {
