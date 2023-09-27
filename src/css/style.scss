@@ -61,7 +61,8 @@ $innerContainerMargin: 5vw;
 
 /* Feature Images */
 @mixin featureImage {
-    min-width: max(30%, 12.5em);
+    // min-width: max(30%, 12.5em);
+    max-width: 40%;
     max-height: 50vw;
     overflow: hidden;
     border-radius: 20px;
@@ -397,7 +398,7 @@ hr.solid {
 /* Tailored Settings Blog Page Image */
 #blogImage {
     @include featureImage();
-    margin-right: 5em;
+    margin-right: 2em;
 }
 
 /* Tailored Settings Portfolio Image */
@@ -461,6 +462,10 @@ hr.solid {
         
     }
 
+    .leftHeader .headerSection {
+        margin-right: 0;
+    }
+    
     /* Removing secondary feature posts */
     .featureBlogCards {
         @include display-container(row, center, flex-end, 0px);
@@ -495,6 +500,7 @@ hr.solid {
     /* Adjusting Portrait Image height */
     #portraitImage {
         max-height: none;
+        max-width: 90vw;
     }
 
     #projectImage {
@@ -504,6 +510,7 @@ hr.solid {
     #blogImage {
         max-height: none;
         margin-right: 0;
+        max-width: 90vw;
     }
 }
   
@@ -512,7 +519,7 @@ hr.solid {
 
     /* Adjusting Header Width for midsize */
     .headerSection {
-        max-width: 60vw;
+        max-width: 60%;
     }
 
     /* Blog Page Layout Changes */

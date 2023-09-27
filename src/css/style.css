@@ -414,7 +414,7 @@ hr.solid {
 
 /* Tailored Settings About Page Image */
 #portraitImage {
-  min-width: max(30%, 12.5em);
+  max-width: 40%;
   max-height: 50vw;
   overflow: hidden;
   border-radius: 20px;
@@ -427,11 +427,11 @@ hr.solid {
 
 /* Tailored Settings Blog Page Image */
 #blogImage {
-  min-width: max(30%, 12.5em);
+  max-width: 40%;
   max-height: 50vw;
   overflow: hidden;
   border-radius: 20px;
-  margin-right: 5em;
+  margin-right: 2em;
 }
 #blogImage img {
   object-fit: cover;
@@ -441,7 +441,7 @@ hr.solid {
 
 /* Tailored Settings Portfolio Image */
 #projectImage {
-  min-width: max(30%, 12.5em);
+  max-width: 40%;
   max-height: 50vw;
   overflow: hidden;
   border-radius: 20px;
@@ -532,6 +532,9 @@ hr.solid {
   .cardList .contactCard {
     width: 100%;
   }
+  .leftHeader .headerSection {
+    margin-right: 0;
+  }
   /* Removing secondary feature posts */
   .featureBlogCards {
     display: flex;
@@ -569,6 +572,7 @@ hr.solid {
   /* Adjusting Portrait Image height */
   #portraitImage {
     max-height: none;
+    max-width: 90vw;
   }
   #projectImage {
     display: none;
@@ -576,13 +580,14 @@ hr.solid {
   #blogImage {
     max-height: none;
     margin-right: 0;
+    max-width: 90vw;
   }
 }
 /* --- Media Query for Tablets, Ipads --- */
 @media (min-width: 481px) and (max-width: 1024px) {
   /* Adjusting Header Width for midsize */
   .headerSection {
-    max-width: 60vw;
+    max-width: 60%;
   }
   /* Blog Page Layout Changes */
   .featureBlogCards {
