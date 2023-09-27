@@ -70,6 +70,10 @@ a {
     text-decoration: none;
 }
 
+.accent {
+    color: $accentColor;
+}
+
 button {
     height: 3em;
     color: $accentColor;
@@ -79,10 +83,6 @@ button {
     border-radius: 10px;
     padding: 0.5em;
     background-color: transparent;
-}
-
-.accent {
-    color: $accentColor;
 }
 
 hr.solid {
@@ -253,10 +253,6 @@ nav {
     }
 }
 
-.imageTop {
-    align-items: flex-start;
-}
-
 .portraitImage {
     @include featureImage();
 }
@@ -269,6 +265,10 @@ nav {
 .portfolioImage {
     @include featureImage();
     max-width: 40%;
+}
+
+.imageTop {
+    align-items: flex-start;
 }
 
 /* || PAGE SPECIFIC */
