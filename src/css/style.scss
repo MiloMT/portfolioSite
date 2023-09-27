@@ -93,7 +93,7 @@ hr.solid {
 /* || CONTAINERS */
 
 /* Highest Level Backing Container */
-@mixin background-container($backColor) {
+@mixin outer-container($backColor) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,11 +121,11 @@ nav {
 }
 
 .outerLight {
-    @include background-container($lightBackColor);
+    @include outer-container($lightBackColor);
 }
 
 .outerDark {
-    @include background-container($darkBackColor);
+    @include outer-container($darkBackColor);
 }
 
 .solo {
@@ -142,7 +142,6 @@ nav {
 
 .innerRight {
     @include display-container(row-reverse, flex-end, center, $innerContainerMargin);
-    flex-wrap: nowrap;
     .innerText {
         text-align: right;
         margin-left: 10%;
@@ -157,7 +156,7 @@ nav {
 }
 
 .innerText {
-    max-width: 100%;
+    width: 100%;
     z-index: 10;
     * {
         margin: 10px 0;
@@ -439,10 +438,6 @@ nav {
 
     /* || GENERAL STYLING */
     /* || CONTAINERS */
-
-    .innerText {
-        max-width: 60%;
-    }
 
     .featureBlogCards {
         @include display-container(column, space-around, flex-start, 0);
