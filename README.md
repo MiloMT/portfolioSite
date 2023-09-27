@@ -42,25 +42,49 @@ In order to account for the variety of pages, a single SCSS/CSS document has bee
 
 ## Wireframes
 
-*Contact Buttons not functional throughout - JS needed for popup forms and tracking*
+*Contact Buttons not functional throughout - JS needed for popup forms and tracking*  
+
+*Home Page*  
 ![Home Page](./docs/portfolioWireframe_Homepage.jpg)
-*Home Page*
 
+*Resume*  
 ![Resume](./docs/portfolioWireframe_Resume.jpg)
-*Resume*
 
+*Portfolio - Project Image non functional, JS needed for hover different project anchors to change image*  
 ![Portfolio](./docs/portfolioWireframe_Portfolio.jpg)
-*Portfolio - Project Image non functional, JS needed for hover different project anchors to change image*
 
+*Blog Home*  
 ![Blog Home](./docs/portfolioWireframe_BlogHome.jpg)
-*Blog Home*
 
+*Project / Blog Page*  
 ![Project / Blog Page](./docs/portfolioWireframe_ProjectBlogPage.jpg)
-*Project / Blog Page*
 
 ## Screenshots
 
+### Home Page
+| *Desktop* | *Tablet* | *Phone* |
+|---|---|---|
+| <img src="./docs/screenshot_HomepageDesktop.png" alt="Homepage Desktop" width="500"/> | <img src="./docs/screenshot_HomepageTablet.png" alt="Homepage Tablet" width="350"/> | <img src="./docs/screenshot_HomepagePhone.png" alt="Homepage Phone" width="200"/> |
 
+### About
+| *Desktop* | *Tablet* | *Phone* |
+|---|---|---|
+| <img src="./docs/screenshot_AboutDesktop.png" alt="About Desktop" width="500"/> | <img src="./docs/screenshot_AboutTablet.png" alt="About Tablet" width="350"/> | <img src="./docs/screenshot_AboutPhone.png" alt="About Phone" width="200"/> | 
+
+### Portfolio
+| *Desktop* | *Tablet* | *Phone* |
+|---|---|---|
+| <img src="./docs/screenshot_PortfolioDesktop.png" alt="Portfolio Desktop" width="500"/> | <img src="./docs/screenshot_PortfolioTablet.png" alt="Portfolio Tablet" width="350"/> | <img src="./docs/screenshot_PortfolioPhone.png" alt="Portfolio Phone" width="200"/> | 
+
+### Blog
+| *Desktop* | *Tablet* | *Phone* |
+|---|---|---|
+| <img src="./docs/screenshot_BlogDesktop.png" alt="Blog Desktop" width="500"/> | <img src="./docs/screenshot_BlogTablet.png" alt="Blog Tablet" width="350"/> | <img src="./docs/screenshot_BlogPhone.png" alt="Blog Phone" width="200"/> | 
+
+### Post
+| *Desktop* | *Tablet* | *Phone* |
+|---|---|---|
+| <img src="./docs/screenshot_PostDesktop.png" alt="Post Desktop" width="500"/> | <img src="./docs/screenshot_PostTablet.png" alt="Post Tablet" width="350"/> | <img src="./docs/screenshot_PostPhone.png" alt="Post Phone" width="200"/> | 
 
 ## Target Audience
 
