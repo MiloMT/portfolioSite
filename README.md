@@ -2,8 +2,7 @@
 
 [Published Portfolio Site](https://portfolio-site-nine-dusky.vercel.app/)  
 [Github Repository](https://github.com/MiloMT/portfolioSite)  
-[Slide Deck](./ppt/T1A2_SlideDeck.pdf)  
-[Presentation]()
+[Presentation](https://youtu.be/iyYQi4f3iq8)
 
 ## Purpose
 
@@ -26,15 +25,14 @@ The main host pages in the site are:
 - Blog Home Page
   - Blog Pages
  
-In order to account for the variety of pages, a single SCSS/CSS document has been developed as a custom framework for all the pages. SCSS helps this process tremendously with the advantages it has over native CSS. The largest components contained within the SCSS/CSS document are:
+In order to account for the variety of pages, a single SCSS/CSS document has been developed as a custom framework for all the pages. The largest components contained within the SCSS/CSS document are:
 
-- Background containers: The mixin and light / dark version of this backing container are the backbone of the site. This provides the highest level of organisation and through the use of the mixin, and the 3 classes (light, dark & solo), dictate how the content is organised across the variety of pages.
-- Internal containers: These are the main form of nested containers within the primary background containers. These are designated generally for two heading types and than optionally paragraph and button. These come in three main forms (left, right and center) depending on the justification required of the content.
-- Cards: The three main versions of the cards are contactCard, service & blog. Each of these cards achieves slightly different purposes and each card acts as a mini-container, split between the different use types depending on the required layout objective.
-- Figure Image Containers: There are a variety of figure containers spread throughout designed to function within nested flexboxes. The position and size is a variable based on screen size and media requirements.
-- Nav Bar: Designed to be simple. Clear and concise text always anchored to the top right corner so the user never loses their place and is self explanatory.
-- Home Page Hero Images: Feature images used to drag the user into either the portfolio or blog content. Down the track will be designed to cycle through a variety of posts or featured work to excite the viewer.
-- Blog Header: Unique amongst the other header types. Careful throught has been given so that media sizes plays a heavy role in how the feature blog article are displayed. In total the blog header contains 2 nested levels of flex-box that change direction dependent on media size.
+- Section Containers: These containers highlighted with dark and lighter backgrounds act as the central containers for the page content and make it easier for the user to navigate throughout the site. Really differentiates the different sections and site information.
+- Navbar: Very simple and easy Nav bar located at the top of every page. Top left contains a logo and top right has links to other major pages in text rather than iconography for clarify purposes.
+- Cards: There are a variety of cards including contact cards and services cards, each with a corresponding picture and description. These cards are created in a way so that they're easy to manage and maintain further down the track. They also auto arrange themselves regardless of size or number for responsive design.
+- Feature images: On the home site and than also on the other pages too, there are a variety of feature image containers to grab interest and react to the responsive design of the site. Never overwhelming the other content.
+- Project List: A straight forward and easy to browse list of current projects, link to project pages, and categories to entice users in and provide immediate information on the individual projects.
+- Blog / Project Post pages: Simple and easy to maintain pages that contain a feature image and content in a way that adjusts responsively to screen size.
 
 ## Sitemap
 
