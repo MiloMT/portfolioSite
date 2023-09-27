@@ -1,29 +1,86 @@
-/* --- CSS written in style.scss file. Refer to this for review and edits --- */
-/* --- Variable Declaration --- */
+/* CSS written in style.scss file. Refer to this for review and edits */
+/* || VARIABLE DECLARATION */
 /* Color Palette */
 /* Font Selection */
 /* Default Parameters */
-/* --- Wildcard Selector --- */
+/* || GENERAL STYLING */
 * {
-  margin: 0em;
-  padding: 0em;
+  margin: 0;
+  padding: 0;
   color: #F2F2F2;
+  font-family: "Roboto", sans-serif;
 }
 
-/* ----- Mixins ----- */
-/* Base Heading Text */
-/* Base Paragraph Text */
+/* Largest White Headers */
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 3em;
+  font-size: 3em;
+}
+
+/* Accent Color Mid Headers */
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #1AD993;
+  font-size: 1.25em;
+}
+
+/* Light Color Mid Headers  */
+h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+/* Blog Date Headers */
+h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 0.75em;
+  font-style: italic;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  height: 3em;
+  color: #1AD993;
+  border-color: #1AD993;
+  border-style: solid;
+  border-width: medium;
+  border-radius: 10px;
+  padding: 0.5em;
+  background-color: transparent;
+}
+
+.navLinks a {
+  margin: 0 0.3em;
+}
+
+hr.solid {
+  border-top: 1px solid #F2F2F2;
+  width: 100%;
+}
+
+#accent {
+  color: #1AD993;
+}
+
+/* || CONTAINERS */
 /* Highest Level Backing Container */
 /* Second Level Content Container */
-/* Feature Images */
-/* ----- Element Selectors ----- */
-/* --- Layout Elements --- */
-/* Body Background */
-body {
-  background-color: #262626;
-}
-
-/* Nav Structure */
 nav {
   display: flex;
   flex-direction: row;
@@ -35,164 +92,28 @@ nav {
   width: 100%;
 }
 
-/* --- Text Elements --- */
-/* h1 Element Display */
-h1 {
-  font-family: "Raleway", sans-serif;
-  font-weight: bold;
-  font-size: 3em;
-  line-height: 1.3;
-}
-
-/* h2 Element Display */
-h2 {
-  font-family: "Raleway", sans-serif;
-  font-weight: bold;
-  color: #1AD993;
-  font-size: 1.25em;
-}
-
-/* h3 Element Display */
-h3 {
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  font-size: 1em;
-  font-weight: bold;
-  font-size: 1.25em;
-}
-
-/* h4 Element Display */
-h4 {
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  font-size: 1em;
-  font-size: 0.75em;
-  font-style: italic;
-}
-
-/* Paragraph Element Display */
-p {
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  font-size: 1em;
-}
-
-/* Anchor Element Display */
-a {
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  font-size: 1em;
-  text-decoration: none;
-}
-a a:link {
-  text-decoration: none;
-}
-a a:visited {
-  text-decoration: none;
-}
-
-/* --- Container Elements --- */
-/* Call to Action Buttons */
-button {
-  min-height: 3em;
-  color: #1AD993;
-  border-color: #1AD993;
-  border-style: solid;
-  border-width: medium;
-  border-radius: 10px;
-  padding: 0.5em;
-  background-color: transparent;
-}
-
-/* ----- Class Selectors ----- */
-/* --- Type Containers --- */
-/* Light Background Containers */
-.light {
+.outerLight {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #262626;
 }
 
-/* Dark Background Containers */
-.dark {
+.outerDark {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #0D0D0D;
 }
 
-/* Card Background Containers */
-.card {
-  background-color: #8C8C8C;
-}
-
-/* Placeholder till proper logo image */
-.titleLogo {
-  border-radius: 50%;
-  width: 15em;
-  height: 15em;
-  color: #0D0D0D;
-  object-fit: cover;
-  overflow: hidden;
-}
-.titleLogo img {
-  height: 100%;
-}
-
-/* Controls Image Size on Service Cards */
-.serviceLogo {
-  height: 2em;
-  width: 2em;
-}
-
-.navLogo img {
-  height: 2em;
-}
-
-/* --- Section Containers --- */
-/* Layout Control when single page section */
 .solo {
   min-height: calc(100vh - 5em);
 }
 
-/* Specialised Container for initial homepage section */
-.intro {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: min(5vw, 38.4px);
-  max-width: 1280px;
-  width: 100%;
-}
-.intro > * {
-  margin: 1em;
-}
-.intro .headerSection {
-  max-width: 40%;
+.card {
+  background-color: #8C8C8C;
 }
 
-/* Specialised Container for portfolio page */
-.portfolio {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: min(5vw, 38.4px);
-  max-width: 1280px;
-  width: 100%;
-  flex-wrap: nowrap;
-}
-.portfolio .headerSection {
-  width: 50%;
-  text-align: right;
-  margin-left: 10%;
-}
-
-/* Container for left justified sections */
 .leftHeader {
   display: flex;
   flex-direction: row;
@@ -208,7 +129,6 @@ button {
   margin-right: 10%;
 }
 
-/* Container for right justified sections */
 .rightHeader {
   display: flex;
   flex-direction: row-reverse;
@@ -225,7 +145,6 @@ button {
   margin-left: 10%;
 }
 
-/* Container for center justified sections */
 .centerHeader {
   display: flex;
   flex-direction: row;
@@ -240,29 +159,21 @@ button {
   text-align: center;
 }
 
-/* --- Sub-Section Containers --- */
-/* Container smaller heading sections */
 .headerSection {
   max-width: 100%;
   z-index: 10;
 }
 .headerSection * {
-  margin: 10px 0px;
+  margin: 10px 0;
 }
 
-/* Container Nav anchor links */
-.navLinks a {
-  margin: 0em 0.3em;
-}
-
-/* Container for different card type lists */
 .cardList {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 0px;
+  margin: 0;
   max-width: 1280px;
   width: 100%;
   /* Services card specific */
@@ -287,7 +198,7 @@ button {
 .cardList .contactCard * {
   color: #1AD993;
   font-weight: bold;
-  margin: 0em 1em;
+  margin: 0 1em;
 }
 .cardList .contactCard a {
   display: inherit;
@@ -307,6 +218,10 @@ button {
   border-radius: 5px;
 }
 
+#wrapChange {
+  flex-wrap: nowrap;
+}
+
 /* Container for blog cards in major heading only */
 .featureBlogCards {
   display: flex;
@@ -314,7 +229,7 @@ button {
   align-items: flex-start;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 0px;
+  margin: 0;
   max-width: 1280px;
   width: 100%;
   flex-wrap: nowrap;
@@ -334,7 +249,7 @@ button {
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin: 0px;
+  margin: 0;
   max-width: 1280px;
   width: 100%;
 }
@@ -349,7 +264,22 @@ button {
   border-radius: 5px;
 }
 
-/* Image Container */
+/* || IMAGE HANDLING */
+.largeLogo {
+  border-radius: 50%;
+  width: 15em;
+  height: 15em;
+  overflow: hidden;
+}
+.largeLogo img {
+  height: 100%;
+}
+
+.smallLogo {
+  height: 2em;
+  width: 2em;
+}
+
 .headerImage {
   display: flex;
   justify-content: center;
@@ -362,57 +292,11 @@ button {
   height: 30em;
 }
 
-/* Project List Formatting */
-.projectList {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin: 0px;
-  max-width: 1280px;
-  width: 100%;
-}
-.projectList .project {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 0px;
-  max-width: 1280px;
-  width: 100%;
-}
-
-/* Project List Break */
-hr.solid {
-  border-top: 1px solid #F2F2F2;
-  width: 100%;
-}
-
-/* Blog Post Flexbox Override */
-.blogPost {
-  align-items: flex-start;
-}
-
-/* --- ID Selectors --- */
-/* Overwrite for Accent Text Color if needed */
-#accent {
-  color: #1AD993;
-}
-
-/* Override for figures holding homepage images */
 #headerImage {
   max-width: 40%;
   height: fit-content;
 }
 
-/* Temporary flex-wrap changes */
-#wrapChange {
-  flex-wrap: nowrap;
-}
-
-/* Tailored Settings About Page Image */
 #portraitImage {
   max-width: 40%;
   max-height: 50vw;
@@ -425,7 +309,6 @@ hr.solid {
   width: 100%;
 }
 
-/* Tailored Settings Blog Page Image */
 #blogImage {
   max-width: 40%;
   max-height: 50vw;
@@ -439,7 +322,6 @@ hr.solid {
   width: 100%;
 }
 
-/* Tailored Settings Portfolio Image */
 #projectImage {
   max-width: 40%;
   max-height: 50vw;
@@ -453,31 +335,71 @@ hr.solid {
   width: 100%;
 }
 
-/* ----- Animations ----- */
-/* ----- Media Controllers ----- */
-/* --- Media Query for Mobile Devices --- */
+/* || PAGE SPECIFIC */
+.intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: min(5vw, 38.4px);
+  max-width: 1280px;
+  width: 100%;
+}
+.intro > * {
+  margin: 1em;
+}
+.intro .headerSection {
+  max-width: 40%;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: min(5vw, 38.4px);
+  max-width: 1280px;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.portfolio .headerSection {
+  width: 50%;
+  text-align: right;
+  margin-left: 10%;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  max-width: 1280px;
+  width: 100%;
+}
+.projectList .project {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  max-width: 1280px;
+  width: 100%;
+}
+
+/* To be removed */
+.blogPost {
+  align-items: flex-start;
+}
+
+/* || Media Queries */
 @media (max-width: 480px) {
-  /* Centering homepage content on small device */
-  .intro .headerSection {
-    max-width: 100%;
-  }
-  /* Specialised Container for portfolio page */
-  .portfolio {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: min(5vw, 38.4px);
-    max-width: 1280px;
-    width: 100%;
-  }
-  .portfolio .headerSection {
-    width: 100%;
-    text-align: right;
-    margin-left: 0;
-  }
-  /* Centering header types for content */
+  /* || GENERAL STYLING */
+  /* || CONTAINERS */
   .leftHeader {
     display: flex;
     flex-direction: row;
@@ -511,7 +433,6 @@ hr.solid {
     max-width: 1280px;
     width: 100%;
   }
-  /* Adjusting card list to center line */
   .cardList {
     display: flex;
     flex-direction: row;
@@ -535,25 +456,24 @@ hr.solid {
   .leftHeader .headerSection {
     margin-right: 0;
   }
-  /* Removing secondary feature posts */
   .featureBlogCards {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    margin: 0px;
+    margin: 0;
     max-width: 1280px;
     width: 100%;
     width: 100%;
   }
   .featureBlogCards .main {
-    margin-right: 0px;
+    margin-right: 0;
   }
   .featureBlogCards .blogColumn {
     display: none;
   }
-  /* Adjusting header images to below content */
+  /* || IMAGE HANDLING */
   .headerImage {
     display: flex;
     justify-content: center;
@@ -564,6 +484,25 @@ hr.solid {
   }
   .headerImage img {
     height: 15em;
+  }
+  /* || PAGE SPECIFIC */
+  .intro .headerSection {
+    max-width: 100%;
+  }
+  .portfolio {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: min(5vw, 38.4px);
+    max-width: 1280px;
+    width: 100%;
+  }
+  .portfolio .headerSection {
+    width: 100%;
+    text-align: right;
+    margin-left: 0;
   }
   /* Removing temporary wrap changes */
   #wrapChange {
@@ -583,32 +522,30 @@ hr.solid {
     max-width: 90vw;
   }
 }
-/* --- Media Query for Tablets, Ipads --- */
 @media (min-width: 481px) and (max-width: 1024px) {
-  /* Adjusting Header Width for midsize */
+  /* || GENERAL STYLING */
+  /* || CONTAINERS */
   .headerSection {
     max-width: 60%;
   }
-  /* Blog Page Layout Changes */
   .featureBlogCards {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 0px;
+    margin: 0;
     max-width: 1280px;
     width: 100%;
     flex-wrap: nowrap;
     width: 100%;
     /* Hero Blog Card */
-    /* Secondary Blog Cards */
   }
   .featureBlogCards .main {
-    margin-right: 0px;
+    margin-right: 0;
   }
   .featureBlogCards .main * {
-    margin-top: 0px;
+    margin-top: 0;
   }
   .featureBlogCards .blogColumn {
     display: flex;
@@ -616,7 +553,7 @@ hr.solid {
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0px;
+    margin: 0;
     max-width: 1280px;
     width: 100%;
     margin-top: 20px;
@@ -631,6 +568,8 @@ hr.solid {
     max-width: 100%;
     border-radius: 5px;
   }
+  /* || IMAGE HANDLING */
+  /* || PAGE SPECIFIC */
 }
 
 /*# sourceMappingURL=style.css.map */
