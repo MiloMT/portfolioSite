@@ -2,7 +2,8 @@
 
 [Published Portfolio Site](https://portfolio-site-nine-dusky.vercel.app/)  
 [Github Repository](https://github.com/MiloMT/portfolioSite)  
-[Presentation](toBeUpdated)
+[Slide Deck](./ppt/T1A2_SlideDeck.pdf)  
+[Presentation]()
 
 ## Purpose
 
@@ -95,6 +96,7 @@ This website is targeted towards a few types of individuals:
 
 ## Tech Stack
 
+- Slide Deck: Google Slides
 - Wireframes and Site Map: Figma
 - Website: HTML & CSS/SCSS
 - Deployment: Vercel
