@@ -509,7 +509,7 @@ nav a {
     max-width: 90vw;
   }
   /* || PAGE SPECIFIC */
-  .intro .headerSection {
+  .intro .innerText {
     max-width: 100%;
   }
   .portfolio {
@@ -523,7 +523,7 @@ nav a {
     width: 100%;
     height: 100%;
   }
-  .portfolio .headerSection {
+  .portfolio .innerText {
     width: 100%;
     text-align: right;
     margin-left: 0;

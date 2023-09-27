@@ -419,14 +419,14 @@ nav {
     /* || PAGE SPECIFIC */
 
     .intro {
-        .headerSection {
+        .innerText {
             max-width: 100%;
         }
     }
 
     .portfolio {
         @include display-container(row-reverse, space-between, center, $innerContainerMargin);
-        .headerSection {
+        .innerText {
             width: 100%;
             text-align: right;
             margin-left: 0;
