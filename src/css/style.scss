@@ -70,6 +70,10 @@ a {
     text-decoration: none;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .accent {
     color: $accentColor;
 }
@@ -77,6 +81,7 @@ a {
 button {
     height: 3em;
     color: $accentColor;
+    font-family: $headingFont;
     border-color: $accentColor;
     border-style: solid;
     border-width: medium;
@@ -90,16 +95,29 @@ button {
     }
 }
 
+.logoOnly {
+    border: none;
+    filter: brightness(80%);
+    img {
+        height: 100%;
+    }
+    &:hover {
+        background-color: transparent;
+        filter: brightness(150%);
+    }
+}
+
 hr.solid {
     border-top: 1px solid $text;
     width: 100%;
+    filter: brightness(40%);
 }
 
 @mixin hoverAnimationBlog {
     figure {
-        transition: 1s;
+        transition: 0.5s;
     }
-    &:hover{
+    &:hover, :active{
         figure {
             transform: scale(0.99);
             filter: brightness(80%);
@@ -108,8 +126,8 @@ hr.solid {
 }
 
 @mixin hoverDarken {
-    transition: 0.5s;
-    &:hover {
+    transition: 0.2s;
+    &:hover, :active {
         filter: brightness(70%);
     }
 }
@@ -195,33 +213,14 @@ nav {
 
 .cardList {
     @include display-container(row, center, center, 0);
-    article {
+    article, address {
         margin: 1em;
-        border-radius: 15px;
     }
     .service {
         width: 15em;
         height: 10em;
         padding: 2em 1em 1em 1em;
-    }
-    .contact {
-        display: flex;
-        align-items: center;
-        height: 3em;
-        padding: 0.5em;
-        * {
-            color: $accentColor;
-            font-weight: bold;
-            margin: 0 1em;
-        }
-        a {
-            display: inherit;
-            align-items: inherit;
-            margin: 0;
-        }
-        img {
-            margin: 0 0.5em;
-        }
+        border-radius: 15px;
     }
     .blog {
         @include hoverAnimationBlog();
@@ -244,7 +243,7 @@ nav {
 
 @mixin featureImage {
     max-width: 40%;
-    max-height: 50vw;
+    max-height: 50vh;
     overflow: hidden;
     border-radius: 20px;
     img {
@@ -256,7 +255,6 @@ nav {
 
 .largeLogo {
     border-radius: 50%;
-    width: 15em;
     height: 15em;
     img {
         height: 100%;
@@ -265,7 +263,6 @@ nav {
 
 .smallLogo {
     height: 2em;
-    width: 2em;
 }
 
 .heroImage {
@@ -291,7 +288,9 @@ nav {
 
 .portfolioImage {
     @include featureImage();
-    max-width: 40%;
+    position: sticky;
+    transform: translate(0,-50%);
+    top: 50vh;
 }
 
 .imageTop {
@@ -322,9 +321,11 @@ nav {
 .projectList {
     @include display-container(column, flex-start, center, 0);
     .project {
-        @include display-container(row, space-between, center, 0);
-        a {
-            @include hoverDarken();
+        transition: 0.5s;
+        padding: 1em;
+        border-radius: 10px;
+        &:hover {
+            background-color: #1b1b1b;
         }
     }
 }
@@ -371,12 +372,6 @@ nav {
 
     /* || GENERAL STYLING */
     /* || CONTAINERS */
-
-    .cardList {
-        .contact {
-            width: 100%;
-        }
-    }
 
     .innerLeft .innerText {
         margin-right: 0;
