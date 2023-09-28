@@ -324,7 +324,7 @@ nav {
         transition: 0.5s;
         padding: 1em;
         border-radius: 10px;
-        &:hover {
+        &:hover, :active {
             background-color: #1b1b1b;
         }
     }

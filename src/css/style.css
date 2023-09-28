@@ -361,7 +361,7 @@ nav a:hover, nav a :active {
   padding: 1em;
   border-radius: 10px;
 }
-.projectList .project:hover {
+.projectList .project:hover, .projectList .project :active {
   background-color: #1b1b1b;
 }
 
