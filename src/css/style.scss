@@ -83,11 +83,35 @@ button {
     border-radius: 10px;
     padding: 0.5em;
     background-color: transparent;
+    transition: 0.7s;
+    &:hover {
+        background-color: $accentColor;
+        color: $darkBackColor;
+    }
 }
 
 hr.solid {
     border-top: 1px solid $text;
     width: 100%;
+}
+
+@mixin hoverAnimationBlog {
+    figure {
+        transition: 1s;
+    }
+    &:hover{
+        figure {
+            transform: scale(0.99);
+            filter: brightness(80%);
+        }
+    }
+}
+
+@mixin hoverDarken {
+    transition: 0.5s;
+    &:hover {
+        filter: brightness(70%);
+    }
 }
 
 /* || CONTAINERS */
@@ -116,6 +140,7 @@ hr.solid {
 nav {
     @include display-container(row, space-between, center, 0.5em);
     a {
+        @include hoverDarken();
         margin: 0 0.3em;
     }
 }
@@ -165,6 +190,7 @@ nav {
 
 .card {
     background-color: $cardBackColor;
+    box-shadow: 2px 2px 10px #1b1b1b, -2px -2px 10px #1b1b1b;
 }
 
 .cardList {
@@ -198,6 +224,7 @@ nav {
         }
     }
     .blog {
+        @include hoverAnimationBlog();
         max-width: 20em;
         max-height: 12.5em;
         figure {
@@ -296,6 +323,9 @@ nav {
     @include display-container(column, flex-start, center, 0);
     .project {
         @include display-container(row, space-between, center, 0);
+        a {
+            @include hoverDarken();
+        }
     }
 }
 
@@ -303,8 +333,12 @@ nav {
     @include display-container(row, space-around, flex-start, 0);
     flex-wrap: nowrap;
     width: 100%;
+    figure {
+        overflow: hidden;
+    }
     /* Hero Blog Card */
     .main {
+        @include hoverAnimationBlog();
         margin-right: 50px;
         * {
             margin-top: 10px;
@@ -314,6 +348,7 @@ nav {
     .blogColumn {
         @include display-container(column, flex-start, flex-start, 0);
         .secondary {
+            @include hoverAnimationBlog();
             width: 100%;
             * {
                 margin-top: 10px;
