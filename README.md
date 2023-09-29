@@ -2,7 +2,7 @@
 
 [Published Portfolio Site](https://portfolio-site-nine-dusky.vercel.app/)  
 [Github Repository](https://github.com/MiloMT/portfolioSite)  
-[Presentation](https://youtu.be/iyYQi4f3iq8)
+[Presentation](https://youtu.be/AEmJ2mspfkM)
 
 ## Purpose
 
